@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-class Program
+// Program class representing the entry point of the Salad Recipe App
+public class Program
 {
+    // Main method: Entry point of the application
     static void Main(string[] args)
     {
         Console.WriteLine("Welcome to the Salad Recipe App!");
 
+        // List to store recipes
         List<Recipe> recipes = new List<Recipe>();
 
         while (true)
@@ -15,9 +18,11 @@ class Program
             Console.WriteLine("\n1. Add Recipe");
             Console.WriteLine("2. Display Recipes");
             Console.WriteLine("3. Exit");
-           
+
+            // Read user choice
             string choice = Console.ReadLine();
 
+            // Switch based on user choice
             switch (choice)
             {
                 case "1":
@@ -37,6 +42,7 @@ class Program
         }
     }
 
+    // Method to create a new recipe
     static Recipe CreateRecipe()
     {
         Console.Write("Enter recipe name: ");
@@ -81,7 +87,7 @@ class Program
         return recipe;
     }
 
-
+    // Method to display recipes
     static void DisplayRecipes(List<Recipe> recipes)
     {
         if (recipes.Count == 0)
@@ -115,7 +121,4 @@ class Program
             Console.WriteLine("Recipe not found.");
         }
     }
-
-
 }
-

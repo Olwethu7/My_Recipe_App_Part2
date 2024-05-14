@@ -1,36 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Abstract class representing a recipe
+// Recipe class representing a recipe
 public class Recipe
 {
-    // Encapsulation: private fields to hold ingredients and steps
+    // Private fields to hold ingredients and steps
     private List<Ingredient> ingredients;
     private List<RecipeStep> steps;
 
-    // Public property for the name of the recipe
-    public string Name { get; private set; }
-
-    // Constructor to initialize ingredients and steps lists
+    // Constructor to initialize recipe with a name
     public Recipe(string name)
     {
         Name = name;
         ingredients = new List<Ingredient>();
         steps = new List<RecipeStep>();
     }
-    // Method to add ingredients to the recipe
+
+    // Public property for the name of the recipe
+    public string Name { get; private set; }
+
+    // Method to add an ingredient to the recipe
     public void AddIngredient(Ingredient ingredient)
     {
         ingredients.Add(ingredient);
     }
 
-    // Method to add steps to the recipe
+    // Method to add a step to the recipe
     public void AddStep(RecipeStep step)
     {
         steps.Add(step);
     }
 
-    // Method to calculate total calories of the recipe
+    // Method to calculate the total calories of the recipe
     public double CalculateTotalCalories()
     {
         double totalCalories = 0;
